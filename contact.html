@@ -4,221 +4,272 @@
   <meta charset="utf-8">
   <title>Nivvayasa – Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Fonts & Bootstrap -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #222;
-      overflow-x: hidden;
+    :root{
+      --navy:#08122a;
+      --gold:#c19d56;
+      --gold-2:#d4af37;
+      --muted:#6b7280;
     }
 
-    /* ===== Navbar ===== */
-    .navbar {
-      background: linear-gradient(135deg, #111, #333);
-      padding: 15px 5%;
-    }
-    .navbar-brand {
-      color: #f8d21a !important;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .navbar-nav .nav-link {
-      color: #fff !important;
-      margin: 0 10px;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #f8d21a !important;
+    body{
+      font-family: "Poppins", sans-serif;
+      background:#fbfbfd;
+      color:#222;
     }
 
-    /* ===== Header ===== */
-    .contact-header {
-      background: linear-gradient(120deg, #1b1b1b, #2b2b2b);
-      color: white;
-      text-align: center;
-      padding: 100px 20px 80px;
-      background-attachment: fixed;
-      position: relative;
+    /* ========= TOP BAR (Same as Home) ========= */
+    .top-bar{
+      background: linear-gradient(90deg,var(--navy), #071126);
+      color:#fff;
+      padding:10px 0;
+      font-size:13px;
     }
-    .contact-header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #f8d21a;
-      text-transform: uppercase;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    .top-bar a{color:var(--gold-2); text-decoration:none}
+    .top-item{display:flex; align-items:center; gap:.75rem; justify-content:center}
+    .icon-wrap{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.03);display:grid;place-items:center}
+
+    /* ========= NAV (Matches Home) ========= */
+    header.navbar-top{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(8,18,42,0.86), rgba(8,18,42,0.70));
+      border-bottom:1px solid rgba(255,255,255,0.04);
     }
-    .contact-header p {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-top: 10px;
+    .brand{font-weight:700; color:white; font-size:20px; letter-spacing:2px}
+    .nav-link{
+      color:rgba(255,255,255,0.9) !important;
+      text-transform:uppercase;
+      font-weight:600;
+      font-size:13px;
+    }
+    .nav-link:hover{color:var(--gold-2) !important;}
+
+    .btn-ghost {
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.1);
+      padding:.55rem .9rem;
+      font-weight:600;
+      color:#fff;
+      background:transparent;
+      transition:0.25s;
+    }
+    .btn-ghost:hover{
+      background:rgba(255,255,255,0.04);
+      color:var(--gold-2);
     }
 
-    /* ===== Contact Info Section ===== */
-    .contact-section {
-      padding: 80px 10%;
+    /* ========= CONTACT HEADER ========= */
+    .contact-header{
+      position:relative;
+      padding:160px 20px;
+      color:white;
+      background:url('images/contact-bg.jpg') center/cover no-repeat;
     }
-    .contact-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 40px;
-      transition: transform 0.3s ease;
+    .contact-header::before{
+      content:""; position:absolute; inset:0;
+      background:rgba(0,0,0,0.65);
     }
-    .contact-card:hover {
-      transform: translateY(-5px);
+    .contact-header h1{
+      position:relative;
+      font-size:42px;
+      font-weight:700;
+      background:linear-gradient(45deg,var(--gold),var(--gold-2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
-    .contact-card h4 {
-      color: #111;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-    .contact-card p {
-      color: #555;
-      line-height: 1.8;
-      font-size: 1rem;
-    }
-
-    /* ===== Form Styling ===== */
-    form input, form textarea {
-      border-radius: 10px !important;
-      border: 1px solid #ccc !important;
-      padding: 12px 15px;
-      font-size: 1rem;
-    }
-    form textarea {
-      height: 120px;
-      resize: none;
-    }
-    form .btn {
-      background: linear-gradient(135deg, #f8d21a, #d4b000);
-      border: none;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 10px;
-      padding: 12px;
-      transition: all 0.3s ease;
-    }
-    form .btn:hover {
-      background: linear-gradient(135deg, #d4b000, #f8d21a);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transform: translateY(-2px);
+    .contact-header p{
+      position:relative;
+      opacity:.9;
+      font-size:18px;
     }
 
-    /* ===== Footer ===== */
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 25px;
-      margin-top: 80px;
+    /* ========= CARDS (matches home theme) ========= */
+    .contact-card{
+      background:white;
+      border-radius:16px;
+      padding:35px;
+      box-shadow:0 10px 30px rgba(8,18,42,0.06);
+      transition:0.25s;
     }
-    footer a {
-      color: #f8d21a;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: white;
+    .contact-card:hover{
+      transform:translateY(-6px);
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      .contact-header h1 {
-        font-size: 2rem;
-      }
-      .contact-section {
-        padding: 60px 5%;
-      }
+    .contact-card h4{
+      font-weight:600;
+      color:#08122a;
+    }
+
+    /* ===== FORM ===== */
+    form input, form textarea{
+      border-radius:14px !important;
+      border:1px solid #ccc !important;
+      padding:12px 16px;
+    }
+    textarea{height:140px; resize:none;}
+
+    .submit-btn{
+      background:linear-gradient(90deg,var(--gold),var(--gold-2));
+      border:0;
+      padding:14px;
+      width:100%;
+      border-radius:14px;
+      font-weight:700;
+      color:#07122a;
+      transition:0.25s;
+    }
+    .submit-btn:hover{
+      background:white;
+      box-shadow:0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    /* ========= Footer ========= */
+    footer{
+      padding:2rem 0;
+      color:#6b7280;
+      font-size:.95rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== Navigation ===== -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a href="#" class="navbar-brand">NIVVAYASA</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- ✅ TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="row gy-2 align-items-center">
+        <div class="col-md-4 text-center text-md-start">
+          <div class="top-item">
+            <div class="icon-wrap"><i class="fa fa-phone"></i></div>
+            <div>
+              <small>Call us</small>
+              <strong><a href="tel:+918197670731">+91 81976 70731</a></strong>
+            </div>
+          </div>
+        </div>
 
-    <div class="collapse navbar-collapse" id="menu">
-      <div class="navbar-nav ml-auto">
-        <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="projects.html" class="nav-item nav-link">Projects</a>
-        <a href="team.html" class="nav-item nav-link">Team</a>
-        <a href="contact.html" class="nav-item nav-link active">Contact</a>
+        <div class="col-md-4 text-center">
+          <div class="top-item">
+            <div class="icon-wrap"><i class="fa fa-envelope"></i></div>
+            <div>
+              <small>Email</small>
+              <strong><a href="mailto:nivvyaasaa.developers@gmail.com">nivvyaasaa.developers@gmail.com</a></strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center text-md-end brand">NIVVYAASAA</div>
       </div>
     </div>
-  </nav>
-
-  <!-- ===== Header Section ===== -->
-  <div class="contact-header">
-    <h1>Contact Us</h1>
-    <p>We’d love to hear from you — let’s build something great together.</p>
   </div>
 
-  <!-- ===== Contact Section ===== -->
-  <div class="contact-section container">
-    <div class="row">
+  <!-- ✅ NAV -->
+  <header class="navbar-top">
+    <nav class="container navbar navbar-expand-lg">
+      <a class="navbar-brand text-white d-flex gap-2" href="index.html">
+        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-2));display:grid;place-items:center;color:#08122a;font-weight:800">N</div>
+        <div class="brand">Nivvayasa</div>
+      </a>
 
-      <div class="col-md-6 mb-4">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="display:block;width:26px;height:2px;background:white;position:relative;"></span>
+      </button>
+
+      <div id="navMenu" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-3"><a class="btn btn-ghost" href="contact.html">Enquire</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ✅ CONTACT HERO -->
+  <section class="contact-header">
+    <h1>Contact Us</h1>
+    <p>We’re here to answer your questions and guide you through your real estate journey.</p>
+  </section>
+
+  <!-- ✅ CONTACT CONTENT -->
+  <section class="container py-5">
+    <div class="row g-4">
+
+      <div class="col-lg-4">
         <div class="contact-card">
-          <h4>Corporate Office</h4>
-          <p>Address:#8 , ‘Siri gowri’ , 4th b cross , mahalaxmi nagar, bhatawade,Tumkur. Landmark: near mirgi petrol bunk, bhatawade. District:Tumkur City:Tumkur Pincode:572102 State:Karnataka contact no.:+91 81976 70731<br></p>
-          <p><strong>Email:</strong> nivvyaasaa.developers@gmail.com</p>
-          <p><strong>Phone:</strong> +91 81976 70731</p>
-          <hr>
-          <p><strong>Working Hours:</strong><br>Mon - Sat: 9:30 AM – 6:00 PM</p>
+          <h4><i class="fa fa-phone text-warning me-2"></i>Phone</h4>
+          <p class="text-muted">+91 81976 70731</p>
         </div>
       </div>
 
-      <div class="col-md-6 mb-4">
+      <div class="col-lg-4">
+        <div class="contact-card">
+          <h4><i class="fa fa-envelope text-warning me-2"></i>Email</h4>
+          <p class="text-muted">nivvyaasaa.developers@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="contact-card">
+          <h4><i class="fa fa-map-marker-alt text-warning me-2"></i>Address</h4>
+          <p class="text-muted">Bangalore, Karnataka</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-8 mx-auto mt-4">
         <div class="contact-card">
           <h4>Send Us a Message</h4>
+
           <form>
-            <input type="text" class="form-control mb-3" placeholder="Your Name" required>
-            <input type="email" class="form-control mb-3" placeholder="Email" required>
-            <textarea class="form-control mb-3" placeholder="Message" required></textarea>
-            <button type="submit" class="btn btn-block">Send Message</button>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Your Name">
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Your Email">
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Phone Number">
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" placeholder="Your Message"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="submit-btn">Send Message</button>
+              </div>
+            </div>
           </form>
+
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <p>© 2025 Nivvayasa Developers. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  <!-- ✅ FOOTER -->
+  <footer class="border-top">
+    <div class="container text-center py-3">
+      © <span id="year"></span> Nivvayasa — All rights reserved
+    </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
   <script>
-document.querySelector("form").addEventListener("submit", function(e) {
-  e.preventDefault(); // Prevent real submission
-  const name = document.querySelector('input[placeholder="Your Name"]').value;
-  const email = document.querySelector('input[placeholder="Email"]').value;
-  const message = document.querySelector('textarea').value;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
-  if (name && email && message) {
-    alert("✅ Thank you, " + name + "! Your message has been sent successfully.");
-    this.reset();
-  } else {
-    alert("⚠️ Please fill in all fields before submitting.");
-  }
-});
-</script>
-    <script src="js/main.js"></script>
 </body>
 </html>
