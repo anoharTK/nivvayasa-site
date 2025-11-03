@@ -20,18 +20,41 @@
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- HEADER TITLE STYLE -->
+    <!-- HEADER TITLE & MOBILE FIX -->
     <style>
         .brand-title {
-            font-size: 38px;
+            font-size: 34px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             margin-top: 10px;
             text-align: center;
             text-transform: uppercase;
             font-family: 'Poppins', sans-serif;
         }
+
+        /* ✅ MOBILE CONTACT FIX */
+        @media (max-width: 768px) {
+            .top-bar-item {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .top-bar-icon {
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+
+            .top-bar-text h3 {
+                font-size: 16px;
+                margin-bottom: 0px;
+            }
+
+            .top-bar-text p {
+                font-size: 14px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
@@ -53,28 +76,26 @@
                     <h1 class="brand-title">NIVVYAASAA</h1>
                 </div>
 
-                <!-- CALL + EMAIL -->
-                <div class="col-lg-8 d-none d-lg-block">
-                    <div class="row">
+                <!-- ✅ CALL + EMAIL (NOW VISIBLE ON MOBILE) -->
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="row text-center">
 
-                        <div class="col-4"></div>
-
-                        <div class="col-4">
+                        <div class="col-6 col-lg-4 mx-auto">
                             <div class="top-bar-item">
                                 <div class="top-bar-icon"><i class="fa fa-phone"></i></div>
                                 <div class="top-bar-text">
                                     <h3>Call Us</h3>
-                                    <p>+91 81976 70731</p>
+                                    <p><a href="tel:+918197670731">+91 81976 70731</a></p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-6 col-lg-4 mx-auto">
                             <div class="top-bar-item">
                                 <div class="top-bar-icon"><i class="fa fa-envelope"></i></div>
                                 <div class="top-bar-text">
                                     <h3>Email</h3>
-                                    <p>nivvyaasaa.developers@gmail.com</p>
+                                    <p><a href="mailto:nivvyaasaa.developers@gmail.com">nivvyaasaa.developers@gmail.com</a></p>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +111,6 @@
     <div class="nav-bar">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a href="#" class="navbar-brand"></a>
-
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -185,9 +204,10 @@
                 </div>
 
                 <div class="col-lg-7">
-                    <h2 class="section-title">Welcome to Nivvayasa</h2>
-                    <p>Nivvyasaa Developers & Builders was established in 2023 with a vision to create value-driven residential communities across Karnataka. From the beginning, the company has focused on trust, transparency, and quality as its core pillars. Nivvyasaa successfully launched its pilot residential project in Bangalore Rural, Nelamangala, developed across more than 12 acres of converted land in Sondekoppa. The project received an overwhelming response, with every plot sold out in record time. This achievement strengthened the company’s commitment to delivering well-planned, legally clear, and customer-centric layouts. Building on this success, Nivvyasaa is currently running multiple residential projects across the state. Among them, the ongoing project in Sira has gained exceptional demand, with bookings moving rapidly. The company’s growing customer base reflects its consistent delivery of trust and quality. Nivvyasaa aims to provide affordable yet premium living spaces for families seeking secure investment and long-term value. Each project is backed by proper documentation, clear titles, and well-designed infrastructure. With a young and energetic team, Nivvyasaa continues to expand its footprint across Karnataka’s real-estate landscape. The company remains dedicated to turning land into thriving communities while ensuring satisfaction for every customer who becomes part of the Nivvyasaa family..</p>
-                    <p>Our goal is to ensure transparent, hassle-free documentation and affordable projects.</p>
+                    <h2 class="section-title">Welcome to NIVVYAASAA</h2>
+                    <p>Nivvyasaa Developers & Builders was established in 2023 with a vision to create value-driven residential communities across Karnataka. From the beginning, the company has focused on trust, transparency, and quality as its core pillars. Nivvyasaa successfully launched its pilot residential project in Bangalore Rural, Nelamangala, developed across more than 12 acres of converted land in Sondekoppa. The project received an overwhelming response, with every plot sold out in record time. This achievement strengthened the company’s commitment to delivering well-planned, legally clear, and customer-centric layouts. Building on this success, Nivvyasaa is currently running multiple residential projects across the state. Among them, the ongoing project in Sira has gained exceptional demand, with bookings moving rapidly. The company’s growing customer base reflects its consistent delivery of trust and quality. Nivvyasaa aims to provide affordable yet premium living spaces for families seeking secure investment and long-term value. Each project is backed by proper documentation, clear titles, and well-designed infrastructure. With a young and energetic team, Nivvyasaa continues to expand its footprint across Karnataka’s real-estate landscape. The company remains dedicated to turning land into thriving communities while ensuring satisfaction for every customer who becomes part of the Nivvyasaa family..
+
+Our goal is to ensure transparent, hassle-free documentation and affordable projects.</p>
                 </div>
 
             </div>
