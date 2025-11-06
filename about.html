@@ -24,6 +24,51 @@
       --radius:14px;
       --content-max:1100px;
     }
+/* ✅ PREMIUM ANIMATED HAMBURGER ICON */
+.navbar-toggler.custom-toggler {
+  border: none !important;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+}
+
+/* Hamburger Lines */
+.navbar-toggler.custom-toggler .bar {
+  width: 26px;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, #f6e27a);
+  border-radius: 4px;
+  transition: all 0.35s ease;
+  display: block;
+}
+
+/* ✅ When menu is open (rotate to X) */
+.navbar-toggler.custom-toggler.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggler.custom-toggler.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler.custom-toggler.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ✅ Soft Gold Pulsing Glow (mobile only) */
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 0 rgba(212,175,55,0.0); }
+  50% { box-shadow: 0 0 12px rgba(212,175,55,0.45); }
+  100% { box-shadow: 0 0 0 rgba(212,175,55,0.0); }
+}
+
+@media (max-width: 991px) {
+  .navbar-toggler.custom-toggler {
+    animation: pulseGold 1.8s infinite ease-in-out;
+    border-radius: 10px;
+  }
+}
 
     *{box-sizing:border-box}
     body{
@@ -217,9 +262,12 @@
         <div class="ms-2 brand">Nivvayasa</div>
       </a>
 
-      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon" style="display:block;width:28px;height:2px;background:#fff;position:relative"></span>
-      </button>
+     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
 
       <div class="collapse navbar-collapse justify-content-end" id="mainNav">
         <ul class="navbar-nav align-items-center">
@@ -348,13 +396,13 @@
       </div>
 
       <!-- Head of Projects placeholder -->
-      <div class="team-card">
+      <!-- <div class="team-card">
         <img src="https://placehold.co/800x600" alt="Head of Projects">
         <div class="tc-body">
           <h6>Head of Projects</h6>
           <div class="small-muted">Project Execution</div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Add more team cards as required -->
     </div>
@@ -375,5 +423,11 @@
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+document.querySelector('.custom-toggler').addEventListener('click', function(){
+    this.classList.toggle('open');
+});
+</script>
+
 </body>
 </html>
